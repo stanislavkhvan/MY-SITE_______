@@ -1,0 +1,184 @@
+/* Общие стили для всех страниц */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+    color: white;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: rgb(5, 6, 104);
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar h2 {
+    font-size: 1.5em;
+    color: white;
+    margin: 0;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #ddd;
+    transform: translateX(10px);
+}
+
+.sidebar a.active {
+    background-color: #bbb;
+    font-weight: bold;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100vh;
+    position: relative;
+    background-color: rgb(32, 115, 223);
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content.sidebar-hidden {
+    margin-left: 0;
+}
+
+.center-text {
+    position: relative;
+    z-index: 1;
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    max-width: 80%;
+}
+.content h1 {
+font-size: 3em;
+}
+.content p {
+    font-size: 2em;
+}
+.content h2 {
+    font-size: 3em;
+}
+.content p2 {
+    font-size: 2em;
+}
+.content h3 {
+    font-size: 3em;
+}
+.content p3 {
+    font-size: 2em;
+}
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        transform: translateX(-100%);
+    }
+    .content {
+        margin-left: 0;
+    }
+    #menu-toggle {
+        display: block;
+    }
+}
+
+#menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 2;
+    font-size: 1.5em;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#menu-toggle:hover {
+    background-color: #555;
+}
+
+#menu-toggle:focus {
+    outline: none;
+    transform: scale(1.05);
+}
+
+/* Стили для главной страницы с фоновыми изображениями */
+.content::before,
+.content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.content::before {
+    left: 0;
+    background-image: url('IMG/Photo_-84.jpg');
+}
+
+.content::after {
+    right: 0;
+    background-image: url('IMG/Photo_-162.jpg');
+}
+
+/* Специфические стили для страницы About Me */
+.about-content .content::before,
+.about-content .content::after {
+    display: none;
+}
+#image1 {
+    height: 500px;
+}
+
+#image2 {
+    height: auto;
+    width: auto;
+}
+
+#image3 {
+    height: 500px;
+    
+}

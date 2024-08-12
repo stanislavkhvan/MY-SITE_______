@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- Подключаем файл стилей -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="about-content">
+    <button id="menu-toggle" aria-label="Toggle Menu">☰</button>
+    <div class="sidebar" id="sidebar">
+        <h2>MENU</h2>
+        <a href="index.html"><i class="fas fa-home"></i> Site</a>
+        <a href="ABOUTME.html" class="active"><i class="fas fa-user"></i> About me</a>
+    </div>
+    <div class="content" id="content">
+        <h1>About Me</h1>
+        <p>Hi, my name is Stas. I am 17 years old. I am an applicant at IITU. I entered the cybersecurity department.</p>
+        <!-- Добавляем идентификатор для каждого изображения -->
+        <img id="image1" src="IMG/IITU.PNG" alt="IITU">
+        <h2>EDUCATION</h2>
+        <p>I graduated from high school number 96</p>
+        <img id="image2" src="IMG/SCHOOL.JPG" alt="SCHOOL"> 
+        <h3>HOBBY</h3>
+        <p>My hobby is to play basketball. I also play for our school team.</p>
+        <img id="image3" src="IMG/IMG-20231121-WA0017.jpg" alt="SCHOOL TEAM">
+    </div>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            var content = document.getElementById('content');
+            sidebar.classList.toggle('hidden');
+            content.classList.toggle('sidebar-hidden');
+        });
+    </script>
+</body>
+</html>
